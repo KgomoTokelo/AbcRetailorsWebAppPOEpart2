@@ -1,0 +1,497 @@
+[
+  {
+    "name": "OnProductImageUploaded",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.BlobFunctions.OnProductImageUploaded",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "blob",
+        "direction": "In",
+        "type": "blobTrigger",
+        "path": "%BLOB_PRODUCT_IMAGES%/{name}",
+        "connection": "STORAGE_CONNECTION",
+        "properties": {
+          "supportsDeferredBinding": "True"
+        }
+      }
+    ]
+  },
+  {
+    "name": "Customers_List",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.CustomersFunctions.List",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "customers",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Customers_Get",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.CustomersFunctions.Get",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "customers/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Customers_Create",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.CustomersFunctions.Create",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "customers",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Customers_Update",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.CustomersFunctions.Update",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "put"
+        ],
+        "route": "customers/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Customers_Delete",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.CustomersFunctions.Delete",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "delete"
+        ],
+        "route": "customers/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Orders_List",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.OrdersFunctions.List",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "orders",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Orders_Get",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.OrdersFunctions.Get",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "orders/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Orders_Create",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.OrdersFunctions.Create",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "orders",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Orders_UpdateStatus",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.OrdersFunctions.UpdateStatus",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "patch",
+          "post",
+          "put"
+        ],
+        "route": "orders/{id}/status",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Orders_Delete",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.OrdersFunctions.Delete",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "delete"
+        ],
+        "route": "orders/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Products_List",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.ProductsFunctions.List",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "products",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Products_Get",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.ProductsFunctions.Get",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "get"
+        ],
+        "route": "products/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Products_Create",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.ProductsFunctions.Create",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "products",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Products_Update",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.ProductsFunctions.Update",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "put"
+        ],
+        "route": "products/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "Products_Delete",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.ProductsFunctions.Delete",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "delete"
+        ],
+        "route": "products/{id}",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  },
+  {
+    "name": "OrderNotifications_Processor",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.QueueProcessorFunctions.OrderNotificationsProcessor",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "queueTrigger",
+        "dataType": "String",
+        "queueName": "%QUEUE_ORDER_NOTIFICATIONS%",
+        "connection": "STORAGE_CONNECTION",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "StockUpdates_Processor",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.QueueProcessorFunctions.StockUpdatesProcessor",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "message",
+        "direction": "In",
+        "type": "queueTrigger",
+        "dataType": "String",
+        "queueName": "%QUEUE_STOCK_UPDATES%",
+        "connection": "STORAGE_CONNECTION",
+        "properties": {}
+      }
+    ]
+  },
+  {
+    "name": "Uploads_ProofOfPayment",
+    "scriptFile": "ABCRetailers.Functions.dll",
+    "entryPoint": "ABCRetailers.Functions.Functions.UploadsFunctions.Proof",
+    "language": "dotnet-isolated",
+    "properties": {
+      "IsCodeless": false
+    },
+    "bindings": [
+      {
+        "name": "req",
+        "direction": "In",
+        "type": "httpTrigger",
+        "authLevel": "Anonymous",
+        "methods": [
+          "post"
+        ],
+        "route": "uploads/proof-of-payment",
+        "properties": {}
+      },
+      {
+        "name": "$return",
+        "type": "http",
+        "direction": "Out"
+      }
+    ]
+  }
+]
